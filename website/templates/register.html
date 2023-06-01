@@ -1,6 +1,26 @@
 {% extends 'home.html' %}
 {% block content %}
 
-<h1>Registration form not found 404</h1>
+<div class="col-md-6 offset-md-3">
+<h1>Register Now!!!</h1>
+<br>
+<form method="POST" action="">
+        {% csrf_token %}
+<!--        {% if forms.errors %}-->
+<!--            <div class="alert alert-info" role="alert">-->
+<!--              Your forms has errors-->
+<!--                {% for field in forms %}-->
+<!--                    {% if field.errors %}-->
+<!--                        {{ field.errors }}-->
+<!--                    {% endif %}-->
+<!--                {% endfor %}-->
+<!--            </div>-->
+<!--        {% endif %}-->
+         {{ form.as_p }}
+        <br>
+            <button type="submit" class="btn btn-primary">Register</button>
+
+    </form>
+</div>
 
 {% endblock %}
