@@ -1,7 +1,7 @@
 {% extends 'home.html' %}
 {% block content %}
 {% if user.is_authenticated %}
-<div class="col-md-6 offset-md-3">
+
 
     <h1>
         Records
@@ -49,6 +49,7 @@
     </table>
 
 {% else %}
+<div class="col-md-6 offset-md-3">
     <h1>Login</h1>
     <br>
     <form method="POST" action="{% url 'index' %}">
