@@ -1,0 +1,56 @@
+{% extends 'home.html' %}
+{% block content %}
+<h1>Customer Details</h1>
+<br><br>
+<div class="col-md-6 offset-md-3">
+<table class="table table-striped table-bordered">
+<tbody>
+<tr>
+    <td>ID</td>
+    <td>{{ customer_records.id }}</td>
+</tr>
+<tr>
+    <td>Time Stamp</td>
+    <td>{{ customer_records.created_at }}</td>
+</tr>
+<tr>
+    <td>Name</td>
+    <td>{{ customer_records.firstname }} {{ customer_records.lastname }}</td>
+</tr>
+<tr>
+    <td>Email</td>
+    <td>{{ customer_records.email }}</td>
+</tr>
+<tr>
+    <td>Phone</td>
+    <td>{{ customer_records.phone }}</td>
+</tr>
+<tr>
+    <td>Address</td>
+    <td>{{ customer_records.address }}</td>
+</tr>
+<tr>
+    <td>City</td>
+    <td>{{ customer_records.city }}</td>
+</tr>
+<tr>
+    <td>State</td>
+    <td>{{ customer_records.state }}</td>
+</tr>
+<tr>
+    <td>Zip Code</td>
+    <td>{{ customer_records.zipcode }}</td>
+</tr>
+</tbody>
+</table>
+    <center>
+        <a class="btn btn btn-outline-primary" href="{% url 'update_record' customer_records.id %}" role="button" style="align-items: center;" >Edit</a>
+         <a class="btn btn-outline-secondary" href="{% url 'index' %}" role="button" style="align-items: center;">Home</a>
+        <a class="btn btn btn-outline-danger" href="{% url 'delete_record' customer_records.id  %}" role="button" style="align-items: center;" >Delete</a>
+
+    </center>
+
+</div>
+
+{% endblock %}
+
